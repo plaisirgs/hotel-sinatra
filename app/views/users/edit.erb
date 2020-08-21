@@ -1,0 +1,21 @@
+<div class="user form">
+  <h1>Edit your account</h1>
+  <div>
+    <form action="/users/<%=@user.id%>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" required value="<%=@user.username%>"><br>
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" required value="<%=@user.email%>"><br>
+        <label>Password</label>
+        <input type="password" class="form-control" required name="password" value="<%=@user.password%>"><br>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  <p><a href="/users/<%=@user.id%>">Back to your account</a></p>
+  <p><form action="/users/<%=@user.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Account">
+  </form></p>
+</div>
